@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://demoqa.com/automation-practice-form');
+  await page.getByRole('textbox', { name: 'First Name' }).click();
+  await page.getByRole('textbox', { name: 'First Name' }).fill('Michael Steven');
+  await page.getByRole('textbox', { name: 'First Name' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Last Name' }).fill('Castillo Saldarriaga');
+  await page.getByRole('textbox', { name: 'Last Name' }).press('Tab');
+  await page.getByRole('textbox', { name: 'name@example.com' }).fill('Michaelsteven3211@gmail.com');
+  await page.getByText('Male', { exact: true }).click();
+  await page.getByRole('textbox', { name: 'Mobile Number' }).click();
+  await page.getByRole('textbox', { name: 'Mobile Number' }).fill('3196412175');
+  await page.locator('#dateOfBirthInput').click();
+  await page.getByRole('combobox').nth(1).selectOption('2000');
+  await page.locator('div').filter({ hasText: /^JanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember$/ }).getByRole('combobox').selectOption('8');
+  await page.getByRole('option', { name: 'Choose Wednesday, September 20th,' }).click();
+  await page.locator('.subjects-auto-complete__value-container').click();
+  await page.getByText('Sports').click();
+  await page.getByText('Reading').click();
+  await page.getByText('Music').click();
+  await page.getByRole('textbox', { name: 'Select picture' }).click();
+  await page.getByRole('textbox', { name: 'Select picture' }).setInputFiles('Captura de pantalla 2025-03-19 185431.png');
+  await page.getByRole('textbox', { name: 'Current Address' }).click();
+  await page.getByRole('textbox', { name: 'Current Address' }).fill('Calle 107#37 A 41');
+  await page.getByText('Select State').click();
+  await page.getByText('Haryana', { exact: true }).click();
+  await page.getByText('Select City').click();
+  await page.getByText('Panipat', { exact: true }).click();
+});
