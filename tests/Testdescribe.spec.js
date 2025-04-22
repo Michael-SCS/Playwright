@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Validaciones en la página principal', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://www.t-evolvers.com/')
+        await page.goto('https://www.saucedemo.com/')
     })
 
     test('Validar el título de la página', async ({ page }) => {
